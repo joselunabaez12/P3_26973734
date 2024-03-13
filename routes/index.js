@@ -315,7 +315,7 @@ router.get('/registerClient', protectRouteLogin, (req, res) => {
 router.post('/registerClient', async (req, res) => {
   const { name, apellido, email, password } = req.body;
   const userEmail = process.env.EMAIL;
-  const userPassword = process.env.EMAILPASSWORD;
+  const userPassword = process.env.PASSWORDD;
   const secretKey = process.env.GKPRIVATE;
   const gRecaptchaResponse = req.body['g-recaptcha-response'];
   const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${gRecaptchaResponse}`, {
